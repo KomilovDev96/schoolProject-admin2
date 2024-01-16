@@ -1,0 +1,57 @@
+.layout {
+    min-height: 100vh;
+
+    &-sider {
+        border-right: 1px solid rgba(5, 5, 5, 0.06);
+        &-menu {
+            padding-top: 12px;
+        }
+        .ant-layout-sider-trigger {
+            border-top: 1px solid rgba(5, 5, 5, 0.06);
+        }
+    }
+
+    &-content {
+        height: 100vh;
+        &-head {
+            background-color: transparent;
+            border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h4 {
+                margin-bottom: 0;
+            }
+            .user-menu {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                span {
+                    font-size: 18px;
+                }
+            }
+        }
+        &-pages {
+            padding: 16px;
+            height: 100%;
+            overflow: auto;
+            position: relative;
+
+            .page {
+                border-radius: 6px;
+                min-height: 500px;
+                padding: 16px;
+            }
+
+            .page-head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}

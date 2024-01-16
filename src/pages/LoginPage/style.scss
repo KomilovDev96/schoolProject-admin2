@@ -1,0 +1,20 @@
+.login {
+    max-width: 600px;
+    margin: auto;
+
+    &-content {
+        &-logo {
+            display: flex;
+            justify-content: center;
+
+            img {
+                max-width: 200px;
+                height: auto;
+            }
+        }
+    }
+}
+
+.login-form-item {
+    margin-bottom: 20px;
+}
