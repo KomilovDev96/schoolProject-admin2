@@ -4,15 +4,18 @@ import React from 'react'
 import { removeLocalStorage } from '@/utils/localStorage';
 
 import { LOGIN, USER_TOKEN, USER_DATA, SET_AUTH } from '@/utils/variables';
+import { useNavigate } from 'react-router-dom';
 const { Header } = Layout
 
 
 const Navbar = ({ title }) => {
-
+	const navigate = useNavigate()
 	const logout = () => {
+
 		removeLocalStorage(USER_TOKEN)
 		removeLocalStorage(USER_DATA)
 		removeLocalStorage(SET_AUTH)
+		navigate('/')
 		window.location.reload()
 	}
 
