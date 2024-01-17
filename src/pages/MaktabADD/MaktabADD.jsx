@@ -97,7 +97,7 @@ const MaktabADD = () => {
 
                                 <Form.List
                                     name={[classField.name, 'days']}
-                                    initialValue={[{ name: 'Monday', lessons: [] }]}
+                                    initialValue={[{ name: 'Dushanba', lessons: [] }]}
                                 >
                                     {(dayFields, { add: addDay, remove: removeDay }) => (
                                         <>
@@ -110,9 +110,12 @@ const MaktabADD = () => {
                                                         fieldKey={[dayField.fieldKey, 'name']}
                                                     >
                                                         <Select style={{ width: 120 }}>
-                                                            <Option value="Monday">Monday</Option>
-                                                            <Option value="Tuesday">Tuesday</Option>
-                                                            {/* Добавьте остальные дни недели */}
+                                                            <Option value="Dushanba">Dushanba</Option>
+                                                            <Option value="Seshanba">Seshanba</Option>
+                                                            <Option value="Chorshanba">Chorshanba</Option>
+                                                            <Option value="Payshanba">Payshanba</Option>
+                                                            <Option value="Juma">Juma</Option>
+                                                            <Option value="Shanba">Shanba</Option>
                                                         </Select>
                                                     </Form.Item>
 
