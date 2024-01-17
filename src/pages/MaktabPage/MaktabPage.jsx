@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { USER_DATA, SCHOLL_DELETE } from '@/utils/variables';
 import { MaktabService } from './maktab.servise';
 import { useQuery } from 'react-query';
-import { Button, Space, Table, Tag } from 'antd';
+import { Button, Space, Table, Typography, Tag } from 'antd';
+const { Text } = Typography;
 import { DeleteOutlined, EditOutlined, EyeOutlined, PlusOutlined } from '@ant-design/icons';
 import DeleteConfirm from '../UserPage/DeleteConfirm/DeleteConfirm';
 export default function MaktabPage() {
@@ -28,7 +29,6 @@ export default function MaktabPage() {
     const user = JSON.parse(userParse)
     const admin = user?.role
     const userID = user.id
-
     const redirect = (id) => {
         if (id) navigate(`/maktab/update/${userID}`)
         else navigate("/maktab/add")
@@ -47,17 +47,26 @@ export default function MaktabPage() {
 
     );
     const { isLoading, data } = QureData
-    console.log(data)
     const deleteItem = async (id) => {
         await api.delete(`${SCHOLL_DELETE}/${id}`)
         QureData.refetch()
-
     }
     const columns = [
         {
             title: 'имя',
             key: 'name',
             dataIndex: 'name',
+        },
+        {
+            title: 'User',
+            key: 'userID',
+            dataIndex: 'userID',
+            render: (data) => {
+                console.log(data)
+                return (
+                    <Text mark>{data?.username}</Text>
+                )
+            }
         },
         {
             title: 'Классы',
