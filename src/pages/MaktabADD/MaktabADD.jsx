@@ -33,9 +33,6 @@ const MaktabADD = () => {
                 const combinedObject = Object.assign({}, values, { userID: adminRole.id });
                 mutateAsync(combinedObject)
                 navigate('/maktab')
-                setTimeout(() => {
-                    window.location.reload()
-                }, 1000)
             }
             else {
                 mutateAsync(values)
